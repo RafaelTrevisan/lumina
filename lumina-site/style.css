@@ -1,0 +1,718 @@
+/* =========================================================
+   LUMINA CONSULTORIA — Estilos principais
+   Dica de edição: as cores e fontes ficam todas aqui em cima,
+   em ":root". Para mudar o "visual" do site, mexa só aqui.
+   ========================================================= */
+
+:root {
+  /* Paleta de cores (baseada na paleta enviada, com um tom
+     escuro extra para dar contraste em telão/projeção) */
+  --lumina-background: #FAF4ED;      /* fundo claro principal */
+  --lumina-background-soft: #F8E7D6; /* fundo claro alternativo */
+  --lumina-peach: #F3D0B5;           /* pêssego (detalhes, gradientes) */
+  --lumina-rose: #E9B59D;            /* rosa (detalhes, gradientes) */
+  --lumina-sage: #D3CBB5;            /* sálvia (detalhes, gradientes) */
+  --lumina-gold: #BA925F;            /* dourado (ícones, linhas, botões) */
+  --lumina-gold-light: #D3A366;      /* dourado claro (hover, gradientes) */
+  --lumina-gold-dark: #9E6E37;       /* dourado escuro (textos sobre claro) */
+  --lumina-text: #604D38;            /* marrom (texto principal) */
+  --lumina-ink: #2B2014;             /* marrom bem escuro (seções de contraste) */
+  --lumina-white: #FFFFFF;
+
+  /* Tipografia */
+  --fonte-titulo: 'Fraunces', Georgia, serif;
+  --fonte-texto: 'Manrope', Arial, sans-serif;
+
+  /* Espaçamentos e formas */
+  --raio: 4px;
+  --largura-max: 1140px;
+  --sombra: 0 20px 40px -20px rgba(43, 32, 20, 0.28);
+}
+
+/* ---------- Reset básico ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  color: var(--lumina-text);
+  background: var(--lumina-background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--lumina-gold-dark);
+  outline-offset: 2px;
+}
+
+/* ---------- Textos utilitários ---------- */
+.eyebrow {
+  font-family: var(--fonte-texto);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lumina-gold-dark);
+  margin: 0 0 12px;
+}
+.eyebrow--center { text-align: center; }
+
+.section-title {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  margin: 0 0 18px;
+  color: var(--lumina-ink);
+}
+.section-title--center { text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.section-lead {
+  color: var(--lumina-text);
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin: 0 0 8px;
+}
+.section-lead--center { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--raio);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--lumina-gold-light), var(--lumina-gold-dark));
+  color: var(--lumina-white);
+}
+.btn--primary:hover { background: var(--lumina-gold-dark); }
+
+.btn--ghost {
+  background: linear-gradient(135deg, var(--lumina-gold-light), var(--lumina-gold-dark));
+  color: var(--lumina-white);
+}
+.btn--ghost:hover { background: var(--lumina-gold-dark); }
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--lumina-background);
+  border-bottom: 1px solid var(--lumina-sage);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--lumina-ink);
+}
+.logo__dot { color: var(--lumina-gold); }
+
+.nav__list {
+  display: flex;
+  gap: 32px;
+}
+
+.nav__link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--lumina-ink);
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: var(--lumina-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.nav__link:hover::after { transform: scaleX(1); }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--lumina-ink);
+  border-radius: 2px;
+}
+
+/* =========================================================
+   HERO / HOME
+   ========================================================= */
+.hero {
+  padding: 72px 0 64px;
+  background: linear-gradient(180deg, var(--lumina-background-soft) 0%, var(--lumina-peach) 55%, var(--lumina-rose) 100%);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero__title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.12;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: var(--lumina-ink);
+}
+
+.hero__subtitle {
+  color: var(--lumina-text);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+.hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* A logo já vem com fundo transparente (recortada e sem o
+   papel branco original), por isso ela "flutua" direto sobre
+   o degradê do hero, sem caixa nem sombra ao redor. */
+.hero__logo {
+  width: 120%;
+  max-width: 560px;
+  filter: drop-shadow(0 12px 24px rgba(43, 32, 20, 0.12));
+}
+
+/* =========================================================
+   NOSSOS PILARES (elemento de assinatura — vindo da marca)
+   ========================================================= */
+.pilares {
+  background: var(--lumina-white);
+  padding: 80px 0;
+  border-bottom: 1px solid var(--lumina-sage);
+}
+
+.pilares__list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.pilares__item { text-align: center; }
+
+.pilares__icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 1.5px solid var(--lumina-gold);
+  color: var(--lumina-gold-dark);
+  margin-bottom: 20px;
+}
+.pilares__icone svg { width: 36px; height: 36px; }
+
+.pilares__titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  color: var(--lumina-ink);
+}
+
+.pilares__texto {
+  color: var(--lumina-text);
+  font-size: 0.95rem;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.pilares__frase {
+  text-align: center;
+  margin: 56px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--lumina-sage);
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--lumina-gold-dark);
+}
+
+/* =========================================================
+   SOBRE NÓS / EQUIPE
+   ========================================================= */
+.empresa { padding: 88px 0; background: var(--lumina-background); }
+
+/* Grade dos cards da equipe. Fixamos 5 colunas para telas largas
+   (para as 5 mentoras ficarem sempre na mesma linha) e reduzimos
+   nas telas menores lá embaixo, nas media queries. Se um dia
+   adicionar/remover mentoras, troque o "5" abaixo pelo novo total. */
+.equipe {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.equipe__card {
+  background: var(--lumina-white);
+  border: 1px solid var(--lumina-sage);
+  border-radius: var(--raio);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.equipe__foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  border: 2px solid var(--lumina-gold);
+  padding: 4px;
+}
+
+.equipe__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--lumina-gold-dark);
+  margin: 0 0 20px;
+}
+
+.equipe__bloco { text-align: left; margin-bottom: 20px; }
+.equipe__bloco:last-child { margin-bottom: 0; }
+
+.equipe__rotulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.equipe__rotulo--formacoes { color: #C0653B; }
+.equipe__rotulo--especialidades { color: var(--lumina-gold-dark); }
+
+.equipe__icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--lumina-background-soft);
+  font-size: 0.85rem;
+}
+
+/* Aqui é onde controla o tamanho das listas (o texto preto pequeno
+   da imagem). Aumente o font-size abaixo se quiser as letras
+   ainda maiores. */
+.equipe__lista li {
+  color: var(--lumina-text);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.equipe__lista li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--lumina-gold);
+}
+.equipe__lista li:last-child { margin-bottom: 0; }
+
+/* =========================================================
+   A PLATAFORMA
+   ========================================================= */
+.mentorias {
+  background: var(--lumina-background-soft);
+  padding: 88px 0;
+  border-top: 1px solid var(--lumina-sage);
+  border-bottom: 1px solid var(--lumina-sage);
+}
+
+.cards {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Modificador usado quando a seção tem 4 itens em vez de 3
+   (ex.: "Nossa mentoria" / Destaques da Plataforma) */
+.cards--4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  border: 1px solid var(--lumina-sage);
+  border-radius: var(--raio);
+  padding: 32px 28px;
+  background: var(--lumina-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+
+.card--destaque {
+  background: var(--lumina-ink);
+  color: var(--lumina-background);
+  border-color: var(--lumina-ink);
+}
+.card--destaque .card__title { color: var(--lumina-background); }
+.card--destaque .card__text { color: var(--lumina-peach); }
+.card--destaque .card__list li::before { color: var(--lumina-gold-light); }
+
+.card__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  margin: 0 0 12px;
+  color: var(--lumina-gold-dark);
+}
+
+.card__text {
+  color: var(--lumina-text);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.card__list li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+.card__list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--lumina-gold-dark);
+}
+
+/* =========================================================
+   NOSSO MODELO
+   ========================================================= */
+.modelo {
+  background: var(--lumina-ink);
+  color: var(--lumina-background);
+  padding: 88px 0;
+  text-align: center;
+}
+
+.modelo__titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--lumina-gold-light);
+  margin: 0 0 40px;
+  text-transform: uppercase;
+}
+
+.modelo__lista {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.modelo__lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1.20rem;
+  color: var(--lumina-background);
+  margin-bottom: 20px;
+}
+.modelo__lista li:last-child { margin-bottom: 0; }
+
+.modelo__check {
+  color: var(--lumina-gold-light);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   PROPOSTA
+   ========================================================= */
+.proposta {
+  background: var(--lumina-background);
+  padding: 88px 0;
+  border-top: 1px solid var(--lumina-sage);
+  border-bottom: 1px solid var(--lumina-sage);
+}
+
+.etapas {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.etapa {
+  background: var(--lumina-white);
+  border: 1px solid var(--lumina-gold);
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.etapa:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+
+.etapa__numero {
+  display: block;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lumina-gold-dark);
+  margin-bottom: 10px;
+}
+
+.etapa__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  color: var(--lumina-ink);
+  margin: 0 0 16px;
+}
+
+.etapa__texto {
+  color: var(--lumina-text);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* =========================================================
+   SOLICITE O ORÇAMENTO
+   ========================================================= */
+.orcamento { padding: 88px 0; background: var(--lumina-background-soft); }
+
+.orcamento__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+}
+
+.orcamento__texto .section-lead { max-width: none; }
+
+.form {
+  background: var(--lumina-white);
+  border: 1px solid var(--lumina-sage);
+  border-radius: var(--raio);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__row { display: flex; flex-direction: column; gap: 6px; }
+
+.form__row--2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form__row--2 > div { display: flex; flex-direction: column; gap: 6px; }
+
+.form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--lumina-ink);
+}
+
+.form input,
+.form select,
+.form textarea {
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  border: 1px solid var(--lumina-sage);
+  border-radius: var(--raio);
+  background: var(--lumina-background);
+  color: var(--lumina-text);
+  width: 100%;
+}
+
+.form textarea { resize: vertical; }
+
+.form .btn { align-self: flex-start; border: none; }
+
+.form__feedback {
+  font-size: 0.9rem;
+  font-weight: 700;
+  min-height: 1.2em;
+  color: #3f7a4f;
+}
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+.contato {
+  background: var(--lumina-ink);
+  color: var(--lumina-background);
+  padding: 88px 0;
+}
+
+.contato .section-title { color: var(--lumina-background); }
+.contato .section-lead { color: var(--lumina-peach); }
+
+.contato__inner { display: block; }
+
+.contato__grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.contato__item h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+  color: var(--lumina-gold-light);
+}
+
+.contato__item p {
+  margin: 0;
+  color: var(--lumina-peach);
+  font-size: 0.95rem;
+}
+.contato__item a:hover { text-decoration: underline; }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.footer {
+  background: var(--lumina-ink);
+  color: var(--lumina-sage);
+  padding: 24px 0;
+  border-top: 1px solid rgba(250, 244, 237, 0.15);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.footer__topo { color: var(--lumina-gold-light); font-weight: 700; }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 900px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__figure { order: -1; }
+
+  .pilares__list { grid-template-columns: 1fr; gap: 40px; }
+
+  .equipe { grid-template-columns: repeat(2, 1fr); }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .cards--4 { grid-template-columns: repeat(2, 1fr); }
+
+  .etapas { grid-template-columns: repeat(2, 1fr); }
+
+  .orcamento__inner { grid-template-columns: 1fr; }
+  .form__row--2 { grid-template-columns: 1fr; }
+
+  .contato__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--lumina-background);
+    border-bottom: 1px solid var(--lumina-sage);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .nav.is-open { max-height: 400px; }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+  }
+  .nav__list li { border-top: 1px solid var(--lumina-sage); }
+  .nav__list li:first-child { border-top: none; }
+  .nav__link { display: block; padding: 14px 0; }
+
+  .menu-toggle { display: flex; }
+
+  .contato__grid { grid-template-columns: 1fr; }
+
+  .equipe { grid-template-columns: 1fr; }
+
+  .cards--4 { grid-template-columns: 1fr; }
+
+  .etapas { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

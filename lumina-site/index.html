@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lumina Consultoria | Mentoria para Líderes</title>
+  <meta name="description" content="Lumina Consultoria - Iluminando líderes, transformando pessoas.">
+
+  <!-- Fontes do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="topo">
+
+  <!-- ===================== CABEÇALHO / MENU ===================== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#topo" class="logo">LUMINA<span class="logo__dot"></span></a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#empresa" class="nav__link">Sobre nós</a></li>
+          <li><a href="#mentorias" class="nav__link">A plataforma</a></li>
+          <li><a href="#modelo" class="nav__link">Nosso modelo</a></li>
+          <li><a href="#proposta" class="nav__link">Proposta</a></li>
+          <li><a href="#orcamento" class="nav__link">Solicite o orçamento</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- ===================== HERO / HOME ===================== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Consultoria em mentoria para líderes</p>
+          <h1 class="hero__title">Iluminando líderes,<br>transformando pessoas.</h1>
+          <p class="hero__subtitle">
+            A Lumina acompanha líderes e times de liderança em uma jornada estruturada
+            de autoconhecimento, direção e resultado — sem fórmulas prontas, com um plano
+            feito para o seu momento.
+          </p>
+          <div class="hero__actions">
+            <a href="#orcamento" class="btn btn--primary">Solicitar orçamento</a>
+            <a href="#mentorias" class="btn btn--ghost">Conhecer a mentoria</a>
+          </div>
+        </div>
+
+        <div class="hero__figure">
+          <img src="lumina-logo-mark.png" alt="Lumina Consultoria — nascer do sol sobre montanhas com um caminho dourado" class="hero__logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NOSSOS PILARES (elemento de assinatura) ===================== -->
+    <section class="pilares">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">Nossos pilares</p>
+        <h2 class="section-title section-title--center">O que guia cada mentoria da Lumina</h2>
+
+        <div class="pilares__list">
+          <div class="pilares__item">
+            <span class="pilares__icone" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="9" stroke="currentColor" stroke-width="2"/>
+                <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <line x1="24" y1="2" x2="24" y2="9"/>
+                  <line x1="24" y1="39" x2="24" y2="46"/>
+                  <line x1="2" y1="24" x2="9" y2="24"/>
+                  <line x1="39" y1="24" x2="46" y2="24"/>
+                  <line x1="8.5" y1="8.5" x2="13.5" y2="13.5"/>
+                  <line x1="34.5" y1="34.5" x2="39.5" y2="39.5"/>
+                  <line x1="8.5" y1="39.5" x2="13.5" y2="34.5"/>
+                  <line x1="34.5" y1="13.5" x2="39.5" y2="8.5"/>
+                </g>
+              </svg>
+            </span>
+            <h3 class="pilares__titulo">Iluminar</h3>
+            <p class="pilares__texto">Trazer clareza aos desafios da liderança.</p>
+          </div>
+
+          <div class="pilares__item">
+            <span class="pilares__icone" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="21" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 40c0-7.2 5.4-13 12-13s12 5.8 12 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 20l7-8m0 0h-6m6 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3 class="pilares__titulo">Desenvolver</h3>
+            <p class="pilares__texto">Ampliar a capacidade do líder de gerir pessoas.</p>
+          </div>
+
+          <div class="pilares__item">
+            <span class="pilares__icone" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="14" r="5.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="19" r="4.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="36" cy="19" r="4.5" stroke="currentColor" stroke-width="2"/>
+                <path d="M6 40c0-5.8 4.3-10.5 9.5-10.5S24 34.2 24 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 40c0-5.8 4.3-10.5 9.5-10.5S42 34.2 42 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M17 25c1.8-2 4.3-3.2 7-3.2s5.2 1.2 7 3.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <h3 class="pilares__titulo">Transformar</h3>
+            <p class="pilares__texto">Gerar uma experiência melhor para o colaborador e recuperar seu engajamento.</p>
+          </div>
+        </div>
+
+        <p class="pilares__frase">Líderes mais conscientes. Pessoas mais engajadas. Resultados que permanecem.</p>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE NÓS / EQUIPE ===================== -->
+    <section class="empresa" id="empresa">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">Sobre nós</p>
+        <h2 class="section-title section-title--center">Conheça quem vai caminhar com você</h2>
+        <p class="section-lead section-lead--center">
+          Um time de mentoras com formação sólida e vivência prática em gestão de pessoas,
+          pronto para apoiar a sua jornada de liderança.
+        </p>
+
+        <div class="equipe">
+          <article class="equipe__card">
+            <img src="equipe-aline-quintan.png" alt="Aline Quintan" class="equipe__foto">
+            <h3 class="equipe__nome">Aline Quintan</h3>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--formacoes">
+                <span class="equipe__icone" aria-hidden="true">🎓</span> Formações
+              </p>
+              <ul class="equipe__lista">
+                <li>Engenharia Química</li>
+                <li>Gestão da Qualidade</li>
+                <li>MBA Gestão Estratégica de Pessoas</li>
+              </ul>
+            </div>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--especialidades">
+                <span class="equipe__icone" aria-hidden="true">🎯</span> Especialidades
+              </p>
+              <ul class="equipe__lista">
+                <li>Treinamento e Desenvolvimento de Pessoas</li>
+                <li>Desenvolvimento de competências</li>
+                <li>Análise e desenvolvimento de KPIs</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="equipe__card">
+            <img src="equipe-mayume-alves-paulino.png" alt="Mayume Alves Paulino" class="equipe__foto">
+            <h3 class="equipe__nome">Mayume Alves Paulino</h3>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--formacoes">
+                <span class="equipe__icone" aria-hidden="true">🎓</span> Formações
+              </p>
+              <ul class="equipe__lista">
+                <li>Ciências Contábeis</li>
+                <li>Pós-graduação em Rotinas e Cálculos Trabalhistas</li>
+                <li>MBA Gestão Estratégica de Pessoas</li>
+              </ul>
+            </div>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--especialidades">
+                <span class="equipe__icone" aria-hidden="true">🎯</span> Especialidades
+              </p>
+              <ul class="equipe__lista">
+                <li>Rotinas trabalhistas, previdenciárias e fiscais</li>
+                <li>Conformidade legal e gestão de obrigações</li>
+                <li>Eficiência operacional</li>
+                <li>Melhoria contínua de processos</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="equipe__card">
+            <img src="equipe-aline-arvelino.png" alt="Aline Arvelino" class="equipe__foto">
+            <h3 class="equipe__nome">Aline Arvelino</h3>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--formacoes">
+                <span class="equipe__icone" aria-hidden="true">🎓</span> Formações
+              </p>
+              <ul class="equipe__lista">
+                <li>Ciências Contábeis</li>
+                <li>Técnica em Recursos Humanos</li>
+                <li>MBA Gestão Estratégica de Pessoas</li>
+              </ul>
+            </div>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--especialidades">
+                <span class="equipe__icone" aria-hidden="true">🎯</span> Especialidades
+              </p>
+              <ul class="equipe__lista">
+                <li>Gestão de pessoas e desenvolvimento organizacional</li>
+                <li>Recrutamento, seleção e onboarding</li>
+                <li>Treinamento e desenvolvimento de lideranças</li>
+                <li>Cultura organizacional e engajamento</li>
+                <li>Estratégias para retenção de talentos</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="equipe__card">
+            <img src="equipe-jessica-santos.png" alt="Jéssica Santos" class="equipe__foto">
+            <h3 class="equipe__nome">Jéssica Santos</h3>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--formacoes">
+                <span class="equipe__icone" aria-hidden="true">🎓</span> Formações
+              </p>
+              <ul class="equipe__lista">
+                <li>Ciências Contábeis</li>
+                <li>MBA em Controladoria e Finanças</li>
+                <li>MBA Gestão Estratégica de Pessoas</li>
+              </ul>
+            </div>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--especialidades">
+                <span class="equipe__icone" aria-hidden="true">🎯</span> Especialidades
+              </p>
+              <ul class="equipe__lista">
+                <li>Controladoria e gestão financeira</li>
+                <li>Organização e melhoria contínua de processos</li>
+                <li>Visão estratégica e eficiência operacional</li>
+                <li>Liderança e gestão orientada a resultados</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="equipe__card">
+            <img src="equipe-adila-valentin.png" alt="Ádila Valentin" class="equipe__foto">
+            <h3 class="equipe__nome">Ádila Valentin</h3>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--formacoes">
+                <span class="equipe__icone" aria-hidden="true">🎓</span> Formações
+              </p>
+              <ul class="equipe__lista">
+                <li>Enfermagem</li>
+                <li>Pós-graduação em Controle de Infecção Hospitalar</li>
+              </ul>
+            </div>
+
+            <div class="equipe__bloco">
+              <p class="equipe__rotulo equipe__rotulo--especialidades">
+                <span class="equipe__icone" aria-hidden="true">🎯</span> Especialidades
+              </p>
+              <ul class="equipe__lista">
+                <li>Controle de infecção e prevenção</li>
+                <li>Segurança do paciente e gestão de riscos</li>
+                <li>Protocolos, indicadores e melhoria contínua</li>
+                <li>Gestão da qualidade e acreditações</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== A PLATAFORMA ===================== -->
+    <section class="mentorias" id="mentorias">
+      <div class="container">
+        <p class="eyebrow eyebrow--center">A plataforma</p>
+        <h2 class="section-title section-title--center">Acessos disponíveis</h2>
+
+        <div class="cards cards--4">
+          <article class="card">
+            <h3 class="card__title">Painel RH Corporativo</h3>
+            <p class="card__text">Visão executiva com mapa de calor das unidades.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Visão do Gerente</h3>
+            <p class="card__text">Roteiros práticos de feedback e autoavaliação simples.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Mobile First</h3>
+            <p class="card__text">Totalmente otimizado para o dia a dia acelerado de loja.</p>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Análise Preditiva</h3>
+            <p class="card__text">Comparativos regionais e histórico de evolução.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== NOSSO MODELO ===================== -->
+    <section class="modelo" id="modelo">
+      <div class="container">
+        <h2 class="modelo__titulo">Plataforma de Mentoria Preventiva<br>por gatilhos (Data-Driven)</h2>
+
+        <ul class="modelo__lista">
+          <li><span class="modelo__check" aria-hidden="true">✓</span> Plataforma monitora os KPIs continuamente.</li>
+          <li><span class="modelo__check" aria-hidden="true">✓</span> Alerta automático dispara a mentoria ao menor risco.</li>
+          <li><span class="modelo__check" aria-hidden="true">✓</span> Orientação prática nas lojas em até 10 dias.</li>
+          <li><span class="modelo__check" aria-hidden="true">✓</span> Líderes mais conscientes, pessoas mais engajadas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROPOSTA ===================== -->
+    <section class="proposta" id="proposta">
+      <div class="container">
+        <p class="eyebrow">Proposta</p>
+        <h2 class="section-title">Jornada do Atendimento: Do Alerta à Transformação</h2>
+
+        <div class="etapas">
+          <article class="etapa">
+            <span class="etapa__numero">Etapa 01</span>
+            <h3 class="etapa__titulo">Alerta &amp; Coleta</h3>
+            <p class="etapa__texto">Disparo automático via KPI + Formulário ágil (3 min) para gerente e time.</p>
+          </article>
+
+          <article class="etapa">
+            <span class="etapa__numero">Etapa 02</span>
+            <h3 class="etapa__titulo">Escuta Ativa</h3>
+            <p class="etapa__texto">Sessão individual de 45 min com o Gerente + Cruzamento do Raio-X da Loja.</p>
+          </article>
+
+          <article class="etapa">
+            <span class="etapa__numero">Etapa 03</span>
+            <h3 class="etapa__titulo">Mentoria (10 dias)</h3>
+            <p class="etapa__texto">Plano de ação tático + Roteiros de conversa e alinhamento do chão de loja.</p>
+          </article>
+
+          <article class="etapa">
+            <span class="etapa__numero">Etapa 04</span>
+            <h3 class="etapa__titulo">Reavaliação</h3>
+            <p class="etapa__texto">Acompanhamento em 45 a 60 dias para consolidar o engajamento e medir o ROI.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOLICITE O ORÇAMENTO ===================== -->
+    <section class="orcamento" id="orcamento">
+      <div class="container orcamento__inner">
+        <div class="orcamento__texto">
+          <p class="eyebrow">Solicite o orçamento</p>
+          <h2 class="section-title">Vamos montar o plano de mentoria ideal para você</h2>
+          <p class="section-lead">
+            Preencha o formulário com alguns dados. Nossa equipe entra em contato para
+            entender melhor o seu contexto e apresentar uma proposta.
+          </p>
+        </div>
+
+        <form class="form" id="formOrcamento" novalidate>
+          <div class="form__row">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+          </div>
+
+          <div class="form__row form__row--2">
+            <div>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required placeholder="voce@empresa.com.br">
+            </div>
+            <div>
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+          </div>
+
+          <!-- <div class="form__row">
+            <label for="mentoria">Tipo de mentoria</label>
+            <select id="mentoria" name="mentoria">
+              <option value="individual">Mentoria Individual</option>
+              <option value="equipes">Mentoria para Equipes de Liderança</option>
+              <option value="executiva">Mentoria Executiva</option>
+              <option value="nao-sei">Ainda não sei, quero orientação</option>
+            </select>
+          </div> -->
+
+          <div class="form__row">
+            <label for="mensagem">Conte um pouco sobre o momento da sua liderança</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Enviar solicitação</button>
+
+          <p class="form__feedback" id="formFeedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="contato" id="contato">
+      <div class="container contato__inner">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 class="section-title">Fale com a gente</h2>
+          <p class="section-lead">Estamos por aqui para tirar dúvidas sobre nossas mentorias.</p>
+        </div>
+
+        <div class="contato__grid">
+          <div class="contato__item">
+            <h3>E-mail</h3>
+            <p><a href="mailto:contato@luminaconsultoria.com.br">contato@luminaconsultoria.com.br</a></p>
+          </div>
+          <div class="contato__item">
+            <h3>Telefone</h3>
+            <p><a href="tel:+551700000000">(17) 99168-0345</a></p>
+          </div>
+          <div class="contato__item">
+            <h3>Endereço</h3>
+            <p>MBA em Gestão Estratégica de pessoas - UNIFAFIBE<br>Turma de 2025</p>
+          </div>
+          <div class="contato__item">
+            <h3>Horário de atendimento</h3>
+            <p>Segunda a sexta-feira<br>9h às 18h</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>Copyright © <span id="ano"></span> Lumina Consultoria — Todos os direitos reservados.</p>
+      <p class="footer__nota">Projeto acadêmico desenvolvido para fins de TCC.</p>
+      <a href="#topo" class="footer__topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
